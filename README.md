@@ -48,7 +48,7 @@
 | prototype_id | integer     |                |
 | user_id      | integer     |                |
 
-###Association
+### Association
 - belongs_to :user
 - belongs_to :prototype
 
