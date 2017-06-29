@@ -76,11 +76,3 @@
 
 ### Association
 - belongs_to :prototype
-
-# <u> 6. Tagsテーブル </u>
-
-| column       | type        | option         |
-|:-------------|:------------|:---------------|
-| id           | integer     |                |
-| name         | string      |                |
-
