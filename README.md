@@ -1,24 +1,78 @@
-# README
+# DataBase
+***
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# <u> 1. Usersテーブル </u>
 
-Things you may want to cover:
+| column   | type    | option         |
+|:---------|:--------|:---------------|
+| id       | integer | null: false    |
+| name     | string  | null: false    |
+| email    | string  | null: false    |
+| password | string  | null: false    |
+| avator   | string  | null: false    |
+| member   | string  | null: false    |
+| profile  | text    | null: false    |
+| work     | string  | null: false    |
 
-* Ruby version
+### Association
+- has_many :prototypes
+- has_many :likes
+- has_many :comments
 
-* System dependencies
+***
 
-* Configuration
+# <u> 2. Prototypesテーブル </u>
 
-* Database creation
+| column     | type       | option         |
+|:-----------|:-----------|:---------------|
+| id         | integer    | null: false    |
+| image_title| string     | null: false    |
+| catch_copy | string     | null: false    |
+| concept    | text       | null: false    |
+| user_id    | integer    | null: false    |
 
-* Database initialization
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- has_many :comments
+- has_many :likes
+- has_many :images
 
-* Services (job queues, cache servers, search engines, etc.)
+***
 
-* Deployment instructions
+# <u> 3. Commentsテーブル </u>
+| column       | type        | option         |
+|:-------------|:------------|:---------------|
+| id           | integer     | null: false    |
+| text         | text        |                |
+| prototype_id | integer     |                |
+| user_id      | integer     |                |
 
-* ...
+### Association
+- belongs_to :user
+- belongs_to :prototype
+
+***
+
+# <u> 4. Likesテーブル </u>
+
+| column       | type        | option         |
+|:-------------|:------------|:---------------|
+| id           | integer     |                |
+| prototype_id | integer     |                |
+| user_id      | integer     |                |
+
+### Association
+- belongs_to :prototype
+- belongs_to :user
+
+# <u> 5. CapturedImagesテーブル </u>
+
+| column       | type        | option         |
+|:-------------|:------------|:---------------|
+| id           | integer     |                |
+| prototype_id | integer     |                |
+| image        | string      |                |
+
+### Association
+- belongs_to :prototype
