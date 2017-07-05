@@ -7,9 +7,9 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.6'
+gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+gem 'mysql2', '>= 0.3.13', '< 0.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -36,6 +36,14 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem "haml-rails", "~> 0.9"
+
+gem 'better_errors'
+
+gem "binding_of_caller"
+
+gem 'bootstrap-sass'
+
+gem 'html2haml'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
